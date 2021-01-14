@@ -25,14 +25,14 @@ class BinarioController(HTTPEndpoint):
 
             result = operacao(bin_um=bin_um, op=op, bin_dois=bin_dois)
 
-            return Response(f'{result}')
+            return Response(f'{result}', status_code=200)
 
         except OperationNotFoundException as e:
-            return Response(f'{e}')
+            return Response(f'{e}', status_code=400)
         except ValueNotAllowedException as e:
-            return Response(f'{e}')
+            return Response(f'{e}', status_code=400)
         except Exception as e:
-            return Response(f'{e}')
+            return Response(f'{e}', status_code=400)
 
     async def get(self, request):
         return JSONResponse({
