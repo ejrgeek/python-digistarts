@@ -1,6 +1,14 @@
+attrs==20.3.0
 click==7.1.2
 h11==0.12.0
+iniconfig==1.1.1
+packaging==20.8
+pluggy==0.13.1
+py==1.10.0
+pyparsing==2.4.7
+pytest==6.2.1
 python-multipart==0.0.5
 six==1.15.0
 starlette==0.14.1
+toml==0.10.2
 uvicorn==0.13.3
