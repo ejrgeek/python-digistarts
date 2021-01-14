@@ -29,14 +29,14 @@ class ConjuntoController(HTTPEndpoint):
 
             conj = tratamento_conjunto(lista_numeros)
 
-            return Response(f'{conj}')
+            return Response(f'{conj}', status_code=200)
 
         except ValueNotAllowedException as e:
-            return Response(f'{e}')
+            return Response(f'{e}', status_code=400)
         except TotalNumberDiffListSizeException as e:
-            return Response(f'{e}')
+            return Response(f'{e}', status_code=400)
         except Exception as e:
-            return Response(f'{e}')
+            return Response(f'{e}', status_code=400)
 
     async def get(self, request):
         return JSONResponse({
