@@ -16,15 +16,12 @@ class ConjuntoController(HTTPEndpoint):
             lista_numeros = req['lista_numeros']
 
             if total_numeros <= 1 or total_numeros >= 1000:
-                print('1')
                 raise ValueNotAllowedException
             if total_numeros != len(lista_numeros):
-                print('2')
                 raise TotalNumberDiffListSizeException
 
             for numero in lista_numeros:
                 if numero <= -1000 or numero >= 1000:
-                    print('3')
                     raise ValueNotAllowedException
 
             conj = tratamento_conjunto(lista_numeros)
